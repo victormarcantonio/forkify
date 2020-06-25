@@ -17,7 +17,6 @@ import {elements, renderLoader, clearLoader} from './views/base';
  * Liked Recipes
  */
 const state = {};
-window.state = state;
 
 //Search Controller
 const controlSearch = async () => {
@@ -69,7 +68,6 @@ elements.searchResPages.addEventListener('click', e=> {
 const controlRecipe =  async () => {
   // Get ID from url
   const id = window.location.hash.replace('#', '');
-  console.log(id);
 
   if(id) {
      // Prepare UI for changes
@@ -162,7 +160,6 @@ const controlLike = () => {
       likesView.toggleLikeButton(true);
       // Add like to UI list
       likesView.renderLike(newLike);
-      console.log(state.likes);
 
       //User has liked current recipe
    }else {
@@ -211,4 +208,3 @@ elements.recipe.addEventListener('click', e=> {
    }
 });
 
-window.l = new List();
